@@ -13,7 +13,7 @@ urlpatterns = [
 
     # whats new page
     path('addArticle/', views.addArticle, name='addArticle'),
-    path('viewAllArticles/', views.viewAllArticles, name='viewArticles'),
+    path('viewAllArticles/', views.viewAllArticles, name='viewAllArticles'),
     path('editArticle/', views.editArticle, name='editArticle'),
     path('deleteArticle/', views.deleteArticle, name='deleteArticle'),
 
@@ -23,6 +23,10 @@ urlpatterns = [
     path('viewAllDiscussionPost/', views.viewAllDiscussionPost, name='viewAllDiscussionPost'),
     path('editDiscussion/', views.editDiscussion, name='editDiscussion'),
     path('deleteDiscussion/', views.deleteDiscussion, name='deleteDiscussion'),
+
+
+    # ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
+    path('addComment/', views.addComment, name='addComment'),
 
 
     # events page
@@ -43,15 +47,5 @@ urlpatterns = [
     path('editPhoto/', views.editPhoto, name='editPhoto'),
     path('deletePhoto/', views.deletePhoto, name='deletePhoto'),
     path('listPhotos/', views.listPhotos, name='listPhotos'),
-
-
-
-
-
-
-
-
-
-
 
 ]

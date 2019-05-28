@@ -1,7 +1,7 @@
 *************************************************3pm update************************************************************
 
 1. created my django app
-2. working on the Url endroutes
+2. stubbing out my endroutes
 3. Drew a wire frame and listed all the forms necessary
 
 *************************************************FORMS*****************************************************************
@@ -29,6 +29,9 @@
 * Body
 * Video
 * Link
+
+ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
+* comment
 
 4. Gallery Form
 * event
