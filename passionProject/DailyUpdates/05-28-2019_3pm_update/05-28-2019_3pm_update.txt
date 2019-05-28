@@ -1,0 +1,58 @@
+*************************************************3pm update************************************************************
+
+1. created my django app
+2. working on the Url endroutes
+3. Drew a wire frame and listed all the forms necessary
+
+*************************************************FORMS*****************************************************************
+
+1. New Member Form
+* Name
+* UserName
+* email
+* ProfilePic
+* Bio
+* Password
+
+2. Article Form
+* Topic
+* Date
+* Image
+* Body
+* Link
+* Video
+
+3. Discussion Form
+* Topic
+* Date
+* image
+* Body
+* Video
+* Link
+
+4. Gallery Form
+* event
+* image
+* description of event
+* date
+
+
+5.Upcoming Events
+* Event
+* Date
+* Location
+* flyer(image)(PDF)
+* time of event
+
+(i am also thinking of adding a check box that allows people to check if they are attending or not to the event)
+
+(past events might not need a form because i can use an if statement and if the times is pass the current time then
+it will go to the past events page)
+
+6. Library
+* Book Title
+* Book image
+* Book Link
+
+
+
