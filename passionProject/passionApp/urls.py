@@ -4,17 +4,21 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+
+    # add member
     path('newMember/', views.newMember, name='newMember'),
-
     path('allMembers/', views.allMembers, name='allMembers'),
-
     path('profile/', views.profile, name='profile'),
 
+
+    # whats new page
     path('addArticle/', views.addArticle, name='addArticle'),
     path('viewAllArticles/', views.viewAllArticles, name='viewArticles'),
     path('editArticle/', views.editArticle, name='editArticle'),
     path('deleteArticle/', views.deleteArticle, name='deleteArticle'),
 
+
+    # Discussion page
     path('addDiscussionPost/', views.addDiscussionPost, name='addDiscussionPost'),
     path('viewAllDiscussionPost/', views.viewAllDiscussionPost, name='viewAllDiscussionPost'),
     path('editDiscussion/', views.editDiscussion, name='editDiscussion'),
