@@ -4,114 +4,117 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Testing server"),
+    return HttpResponse("Testing server")
 
 
 #  Member page
 
 def newMember(request):
-    return HttpResponse("New member Form "),
+    return HttpResponse("New member Form ")
 
 
 def profile(request):
-    return HttpResponse("Profile Page"),
+    return HttpResponse("Profile Page")
 
 
 def allMembers(request):
-    return HttpResponse("Be able to list all members of the club"),
+    return HttpResponse("Be able to list all members of the club")
 
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
 
 
 def addArticle(request):
-    return HttpResponse('Be able to add article only if you are admin or athena(VP)')
+    return HttpResponse("Be able to add article only if you are admin or athenaVP")
 
 
 def viewAllArticles(request):
-    return HttpResponse("Everyone can view the info the admins post weather you are a member or not"),
+    return HttpResponse("Everyone can view the info the admins post weather you are a member or not")
 
 
 
 def editArticle(request):
-    return HttpResponse("Need to be able to edit any post made from the President and VP"),
+    return HttpResponse("Need to be able to edit any post made from the President and VP")
 
 
 
 def deleteArticle(request):
-    return HttpResponse("Need to be able to delete any post made from President and VP"),
+    return HttpResponse("Need to be able to delete any post made from President and VP")
 
 # Discussion Post Page
 
-def addDiscussionPost(request):
-    return HttpResponse("Only members and admin can make a post and you have to be logged in to add a post"),
+def addDiscussion(request):
+    return HttpResponse("Only members and admin can make a post and you have to be logged in to add a post")
 
 
-def viewAllDiscussionPost(request):
-    return HttpResponse("Only Members loggeed in can view discussion board"),
+def viewAllDiscussion(request):
+    return HttpResponse("Only Members loggeed in can view discussion board")
 
 def editDiscussion(request):
-    return HttpResponse("only if the user who created the post can edit it"),
+    return HttpResponse("only if the user who created the post can edit it")
 
 
 def deleteDiscussion(request):
-    return HttpResponse("Only the created of discussion can delete discussion"),
+    return HttpResponse("Only the created of discussion can delete discussion")
 
 
 # ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
 
 def addComment(request):
-    return HttpResponse("Members are able to add a single comment on the discussion post."),
+    return HttpResponse("Members are able to add a single comment on the discussion post.")
 
 # upcoming events
+
+
 def addUpcomingEvent(request):
-    return HttpResponse("Admins Only can add upcoming Event"),
+    return HttpResponse("Admins Only can add upcoming Event")
+
 
 def editUpcomingEvent(request):
-    return HttpResponse("Only admins can edit post"),
+    return HttpResponse("Only admins can edit post")
 
 def deleteUpcomingEvent(request):
-    return HttpResponse("only admins can delete post"),
+    return HttpResponse("only admins can delete post")
 
 def viewAllUpcomingEvents(request):
-    return HttpResponse("Everyone can view upcoming events whether your are logged in  or not"),
+    return HttpResponse("Everyone can view upcoming events whether your are logged in  or not")
 
 # past events
 
 def listAllPastEvents(request):
-    return HttpResponse("Everyone can view passed events to see consistency the club has had since october 2018"),
+    return HttpResponse("Everyone can view passed events to see consistency the club has had since october 2018")
 
 
 # library page
 
 def addBook(request):
     return HttpResponse("Only admin can add to the library of the current and passed books read, and maybe even "
-                        "future"),
+                        "future")
 
 
 def editBook(request):
-    return HttpResponse("only admin and vp can edit book made "),
+    return HttpResponse("only admin and vp can edit book made ")
 
 def deleteBook(request):
-    return HttpResponse("Only admin and VP can delete book made"),
+    return HttpResponse("Only admin and VP can delete book made")
 
 
 def listBooks(request):
     return HttpResponse("Everyone can view books in the library so they can see the genres and different themes, good "
-                        "for advertising"),
+                        "for advertising")
 
 # photo gallery
 
 def addPhoto(request):
-    return HttpResponse("All members can add photo"),
+    return HttpResponse("All members can add photo")
 
 def editPhoto(request):
-    return HttpResponse("Whoever made post and ADMIN can edit photo"),
+    return HttpResponse("Whoever made post and ADMIN can edit photo")
 
 def deletePhoto(request):
-    return HttpResponse("Only whoever made post and ADMIN can delete photo"),
+    return HttpResponse("Only whoever made post and ADMIN can delete photo")
 
 def listPhotos(request):
-    return HttpResponse("Only members and ADMIN can view photos"),
+    return HttpResponse("Only members and ADMIN can view photos")
 
 
 

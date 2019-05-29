@@ -19,8 +19,8 @@ urlpatterns = [
 
 
     # Discussion page
-    path('addDiscussionPost/', views.addDiscussionPost, name='addDiscussionPost'),
-    path('viewAllDiscussionPost/', views.viewAllDiscussionPost, name='viewAllDiscussionPost'),
+    path('addDiscussion/', views.addDiscussion, name='addDiscussion'),
+    path('viewAllDiscussion/', views.viewAllDiscussion, name='viewAllDiscussion'),
     path('editDiscussion/', views.editDiscussion, name='editDiscussion'),
     path('deleteDiscussion/', views.deleteDiscussion, name='deleteDiscussion'),
 
@@ -39,7 +39,7 @@ urlpatterns = [
     # library page
     path('addBook/', views.addBook, name='addBook'),
     path('editBook/', views.editBook, name='editBook'),
-    path('deleteBook', views.deleteBook, name='deleteBook'),
+    path('deleteBook/', views.deleteBook, name='deleteBook'),
     path('listBooks/', views.listBooks, name='listBooks'),
 
     # Gallery Page

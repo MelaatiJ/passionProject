@@ -1,0 +1,77 @@
+************************************************* 11 am **************************************************************
+
+stubbed all endroutes and created views for each route with a description in HTTP RESPONSE on what the function does and
+who is allowed access or can view . i wrote everything out from scratch and did not use any intell
+
+
+came across an error 'attribute error at /'
+
+it was because i added a comma at the end of my return statements.
+
+
+
+i was advised to narrow down what is more important and to complete that first.
+
+1. Add post on the main page
+2. add discussion page
+3. up comming events page
+4. library
+5. gallery
+6. creating a membership would really be last
+7. small profile page
+
+
+******************************************** what to do next **********************************************************
+im going to be work on all the scehma neccesaary
+
+1. New Member Form
+* Name
+* UserName
+* email
+* ProfilePic
+* Bio
+* Password
+
+2. Article Form
+* Topic
+* Date
+* Image
+* Body
+* Link
+* Video
+
+3. Discussion Form
+* Topic
+* Date
+* image
+* Body
+* Video
+* Link
+
+ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
+* comment
+
+4. Gallery Form
+* event
+* image
+* description of event
+* date
+
+
+5.Upcoming Events
+* Event
+* Date
+* Location
+* flyer(image)(PDF)
+* time of event
+
+(i am also thinking of adding a check box that allows people to check if they are attending or not to the event)
+
+(past events might not need a form because i can use an if statement and if the times is pass the current time then
+it will go to the past events page)
+
+6. Library
+* Book Title
+* Book image
+* Book Link
+
