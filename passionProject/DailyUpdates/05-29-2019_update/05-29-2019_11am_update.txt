@@ -23,14 +23,7 @@ i was advised to narrow down what is more important and to complete that first.
 
 ******************************************** what to do next **********************************************************
 im going to be work on all the scehma neccesaary
-
-1. New Member Form
-* Name
-* UserName
-* email
-* ProfilePic
-* Bio
-* Password
+ [ TOOK OFF BECOMING A MEMBER FOR LAST BECAUSE IT IS LEAST IMPORTANT ]
 
 2. Article Form
 * Topic
@@ -75,3 +68,11 @@ it will go to the past events page)
 * Book image
 * Book Link
 
+
+1. New Member Form
+* Name
+* UserName
+* email
+* ProfilePic
+* Bio
+* Password
