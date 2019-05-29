@@ -1,0 +1,33 @@
+****************************************** 3pm update *****************************************************************
+
+2:00 pm
+
+ so far I have completed my models, i still have to create a super user and get access to the admin. I also need to
+ import the models in my admin and create forms using my models. My goal is to finish that before i turn in my update at
+ 3pm. so 45 minutes to get it into.
+
+
+
+i made an addMember model just to hsve it coded and ready but wont implement it until the important factors are complete.
+
+
+2:21 pm
+
+I have imported my models in my admin and registered them. Also will make migrations, Now working in the python file forms
+ and going to add the two starred points at the top.
+
+ *from django import forms
+ *from .models import {ALL MODElS}
+
+ I was having a hard time and many errors in my models because i was using the required field and it didnt exist, but i
+ solved the problem reading the error and my models are successfully made.
+
+ I created a superuser using the command line
+
+ * python manage.py createsuperuser
+Super User created
+username : student
+password: C0d3Cr3w
+
+
+

@@ -12,10 +12,10 @@ urlpatterns = [
 
 
     # whats new page
-    path('addArticle/', views.addArticle, name='addArticle'),
-    path('viewAllArticles/', views.viewAllArticles, name='viewAllArticles'),
-    path('editArticle/', views.editArticle, name='editArticle'),
-    path('deleteArticle/', views.deleteArticle, name='deleteArticle'),
+    path('addArticle/', views.addNani, name='addArticle'),
+    path('viewAllArticles/', views.viewAllNani, name='viewAllArticles'),
+    path('editArticle/', views.editNani, name='editArticle'),
+    path('deleteArticle/', views.deleteNani, name='deleteArticle'),
 
 
     # Discussion page

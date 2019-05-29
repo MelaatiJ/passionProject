@@ -23,21 +23,21 @@ def allMembers(request):
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
 
 
-def addArticle(request):
+def addNani(request):
     return HttpResponse("Be able to add article only if you are admin or athenaVP")
 
 
-def viewAllArticles(request):
+def viewAllNani(request):
     return HttpResponse("Everyone can view the info the admins post weather you are a member or not")
 
 
 
-def editArticle(request):
+def editNani(request):
     return HttpResponse("Need to be able to edit any post made from the President and VP")
 
 
 
-def deleteArticle(request):
+def deleteNani(request):
     return HttpResponse("Need to be able to delete any post made from President and VP")
 
 # Discussion Post Page
