@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'passionApp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'passionApp/css/base.css' %}">
+    <script src="{% static 'passionApp/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'passionApp/js/bootstrap.js' %}"></script>
 </head>
 <body>
+<div>
+    <h1>Manga and Manhwa Book Club</h1>
+</div>
+<div>
+    <a href="{% url 'viewAllNani' %}">NANI?</a>
+    <br>
+    <a href="{% url 'viewAllDiscussion' %}">Lets Talk about it</a>
+    <br>
+    <a href="{% url 'listPhotos' %}">Behind the Scenes</a>
+    <br>
+    <a href="{% url 'listBooks' %}">Bookdom</a>
+    <br>
+    <a href="{% url 'viewAllUpcomingEvents' %}">Events</a>
+</div>
+
 {% block navbar %}
 {% endblock navbar %}
 
-{% block discussionBoard %}
-{% endblock discussionBoard %}
+{% block addPost %}
+{% endblock addPost %}
+<!--content depending on which page you are in -->
+{% block content %}
+{% endblock content %}
 
-
-
-
+<!--all the forms can go in this block-->
 {% block form %}
 {% endblock form %}
 

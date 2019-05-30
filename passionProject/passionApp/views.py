@@ -59,10 +59,11 @@ def addDiscussion(request):
 
 
 def viewAllDiscussion(request):
-
     form = CommentForm(request.POST or None, request.FILES or None)
+    discussionPosts = DiscussionEntryModel.objects.all()
     context = {
-        "form": form
+        "form": form,
+        "allPosts": discussionPosts
     }
     if request.method == "POST":
         CommentEntryModel.objects.create(comment=request.POST["comment"])
@@ -106,8 +107,9 @@ def deleteUpcomingEvent(request):
     return HttpResponse("only admins can delete post")
 
 
+# Everyone can view upcoming events whether your are logged in  or not
 def viewAllUpcomingEvents(request):
-    return HttpResponse("Everyone can view upcoming events whether your are logged in  or not")
+    return render(request, "passionApp/upcomingEvents.html")
 
 
 # past events

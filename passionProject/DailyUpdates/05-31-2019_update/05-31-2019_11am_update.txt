@@ -1,0 +1,14 @@
+****************************************************** 11am update ****************************************************
+
+3:50 pm: Added a little nav bar to start of with and finally getting some content on the webpage!. Its just the skeleton but i am
+happy somethings there to see. I am getting addicted to seeing results and realize that a clear mind and a clean house and
+nothing on my to-do list is the key to success.
+
+
+4:09 pm : I just added two discussion post and it poppped up on the correct page, however it is just printing out
+DiscussionEntryModel(1). I am guessing its because in my for loop i didnt specify which attributes i wanted to print.
+Create Discussion Post saves into the front page. Now have to check my admin and see if it added it!
+
+
+Discussion Successfully can be added to the admin site !
+

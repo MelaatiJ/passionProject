@@ -1,0 +1,17 @@
+Good Afternoon Everyone,
+I am ready to send my 3pm update! I have been working remotely and have been pushing through and really focusing. I got all my forms up and running to the correct end route and redirect working as well. Now i will take your suggestion and focus on my discussion board from this point forward.My goal for the rest of the evening is to get my discussion board running and make sure my forms are correctly creating in the database. Below is my updated link to my passionProject repository. There is a folder that is labled daily updates that has another folder labeled 03-30-2019 and another folder with pm.
+
+
+LINK TO GIT HUB
+https://github.com/MelaatiJ/passionProject.git
+
+
+
+* What I have completed
+ As i am preparing my forms on the page it is helping me say it out loud what other templates i would need. So far I have all my forms on and working except for the Membership one since I am saving that feature for last. I will take you advice from here forwards in regards to completing one feature at a time! I have the forms complete but for now i will focus on the discussion board feature.
+
+* What are you doing now
+I am currently working on my discussion Board feature!. I can add a Discussion but i really want to be able to make it all pop up on the discussion Board and be able to comment it.
+
+* What are your roadblocks
+So far some road blocks is making sure that i am redirecting the information to the right page. It really helps to think it out loud and i am building template at a time as i am making the forms .

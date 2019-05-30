@@ -1,5 +1,15 @@
 {% extends 'passionApp/base.html' %}
 
+{% block content %}
+{% for eachPost in allPosts %}
+{{ eachPost }}
+{% endfor %}
+{% endblock content %}
+
+{% block addPost %}
+<a href="{% url 'addDiscussion' %}">Stir up some Caos and Add a Post!</a>
+{% endblock addPost %}
+
 {% block form %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
