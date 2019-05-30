@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import NaniEntryModel, DiscussionEntryModel, GalleryEntryModel, CommentEntryModel, LibraryEntryModel, \
-    MembershipEntryModel
+    MembershipEntryModel, UpcomingEventsEntryModel
 from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingEventForm, LibraryForm, MembershipForm
 
 
@@ -81,10 +81,20 @@ def deleteDiscussion(request):
 
 
 # upcoming events
+# Admins Only can add upcoming Event
 
 
 def addUpcomingEvent(request):
-    return HttpResponse("Admins Only can add upcoming Event")
+    form = UpcomingEventForm(request.POST or None, request.FILES or None)
+    context = {
+        "form": form
+    }
+    if request.method == "POST":
+        UpcomingEventsEntryModel.objects.create(event=request.POST["event"], Date=request.POST["Date"],
+                                                location=request.POST["location"], flyer=request.POST["flyer"])
+        return redirect("viewAllUpcomingEvents")
+
+    return render(request, "passionApp/addUpcomingEvent.html", context)
 
 
 def editUpcomingEvent(request):
@@ -105,11 +115,20 @@ def listAllPastEvents(request):
     return HttpResponse("Everyone can view passed events to see consistency the club has had since october 2018")
 
 
-# library page
+#  library page
+# Only admin can add to the library of the current and passed books read, and maybe even "
+# "future
 
 def addBook(request):
-    return HttpResponse("Only admin can add to the library of the current and passed books read, and maybe even "
-                        "future")
+    form = LibraryForm(request.POST or None, request.FILES or None)
+    context = {
+        "form": form
+    }
+    if request.method == "POST":
+        LibraryEntryModel.objects.create(title=request.POST["title"], cover=request.POST["cover"],
+                                         link=request.POST["link"])
+        return redirect("listBooks")
+    return render(request, "passionApp/addBook.html", context)
 
 
 def editBook(request):
@@ -126,9 +145,18 @@ def listBooks(request):
 
 
 # photo gallery
+# "All members can add photo"
 
 def addPhoto(request):
-    return HttpResponse("All members can add photo")
+    form = GalleryForm(request.POST or None, request.FILES or None)
+    context = {
+        "form": form
+    }
+    if request.method == "POST":
+        GalleryEntryModel.objects.create(event=request.POST["event"], image=request.POST["image"],
+                                         imageDetails=request.POST["imageDetails"], date=request.POST["date"])
+        return redirect("listPhotos")
+    return render(request, "passionApp/addPhoto.html", context)
 
 
 def editPhoto(request):

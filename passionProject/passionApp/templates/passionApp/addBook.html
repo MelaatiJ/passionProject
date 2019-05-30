@@ -1,0 +1,9 @@
+{% extends 'passionApp/base.html' %}
+
+{% block form %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Add Book To Library</button>
+</form>
+{% endblock form %}
