@@ -27,7 +27,7 @@ class DiscussionEntryModel(models.Model):
 
 # comment form
 class CommentEntryModel(models.Model):
-    comment = models.TextField(max_length=200, blank=False)
+    comment = models.CharField(max_length=200, blank=False)
 
 
 # 4. Gallery Form

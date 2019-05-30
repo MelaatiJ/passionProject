@@ -11,4 +11,5 @@ Create Discussion Post saves into the front page. Now have to check my admin and
 
 
 Discussion Successfully can be added to the admin site !
+ i added some photos as proof under todays update folder
 

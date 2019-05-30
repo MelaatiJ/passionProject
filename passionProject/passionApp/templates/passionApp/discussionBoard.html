@@ -2,18 +2,26 @@
 
 {% block content %}
 {% for eachPost in allPosts %}
-{{ eachPost }}
+{{ eachPost.topic }}
+<br>
+{{ eachPost.date }}
+<br>
+{{ eachPost.image }}
+<br>
+{{ eachPost.entry }}
+<br>
+{{ eachPost.video }}
+<br>
+{{ eachPost.URL_link }}
+<hr>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Comment</button>
+</form>
 {% endfor %}
 {% endblock content %}
 
 {% block addPost %}
 <a href="{% url 'addDiscussion' %}">Stir up some Caos and Add a Post!</a>
 {% endblock addPost %}
-
-{% block form %}
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Comment</button>
-</form>
-{% endblock form %}
