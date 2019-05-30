@@ -1,0 +1,18 @@
+***************************************************** 11am update ****************************************************
+
+So far my models are in the admin and i have a super user created that allows me into the admin site. My models is popping
+in the admin.
+
+i started off by importing all my models into my forms python file
+
+* from .models import {MODEL NAME}, {MODEL NAME}
+* from django import forms
+
+
+
+I Added all the models and turned them into forms in my python forms file. and now im working on my views. first but importing
+all the forms created at the top
+
+*from .forms import {FORM NAME}
+when you import forms its automatically imports the models if the models were imported in the forms file.
+
