@@ -42,15 +42,31 @@ def deleteNani(request):
 
 
 # Discussion Post Page
+# Only members and admin can make a post and you have to be logged in to add a post
 
 def addDiscussion(request):
     form = DiscussionForm(request.POST or None, request.FILES or None)
+    context = {
+        "form": form
+    }
+    if request.method == "POST":
+        DiscussionEntryModel.objects.create(topic=request.POST["topic"], date=request.POST["date"],
+                                            image=request.POST["image"], entry=request.POST["entry"],
+                                            video=request.POST["video"], URL_link=request.POST["URL_link"])
+        return redirect("viewAllDiscussion")
 
-    return HttpResponse("Only members and admin can make a post and you have to be logged in to add a post")
+    return render(request, "passionApp/addDiscussion.html", context)
 
 
 def viewAllDiscussion(request):
-    return HttpResponse("Only Members loggeed in can view discussion board")
+    form = CommentForm(request.POST or None, request.FILES or None)
+    context = {
+        "form": form
+    }
+    if request.method == "POST":
+        CommentEntryModel.objects.create(comment=request.POST["comment"])
+        return redirect("viewAllDiscussion")
+    return render(request, "passionApp/discussionBoard.html", context)
 
 
 def editDiscussion(request):
@@ -62,9 +78,6 @@ def deleteDiscussion(request):
 
 
 # ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
-
-def addComment(request):
-    return HttpResponse("Members are able to add a single comment on the discussion post.")
 
 
 # upcoming events

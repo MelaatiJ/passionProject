@@ -26,7 +26,7 @@ urlpatterns = [
 
 
     # ON EACH DISCUSSION POST , YOU CAN ADD A COMMENT UNDER IT FOR THAT SPECIFIC DISCUSSION
-    path('addComment/', views.addComment, name='addComment'),
+    # path('addComment/', views.addComment, name='addComment'),
 
 
     # events page

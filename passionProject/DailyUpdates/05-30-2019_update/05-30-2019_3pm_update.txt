@@ -1,0 +1,11 @@
+*********************************************** 3pm update ************************************************************
+
+So far ive got two templates complete and my base template made with just one block at the moment {% block form %}
+
+12:50pm update
+
+so far I have three forms up on the webpage, the AddDiscussion, Add an admin post and add a comment in the discussion
+board.
+
+I realized i dont need an addcomment end route so i deleted it because each discussion post a user can add a comment
+which is on the discussion board.
