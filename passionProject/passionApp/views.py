@@ -59,6 +59,7 @@ def addDiscussion(request):
 
 
 def viewAllDiscussion(request):
+
     form = CommentForm(request.POST or None, request.FILES or None)
     context = {
         "form": form
