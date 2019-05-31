@@ -14,6 +14,7 @@
 <br>
 <img src="{{ eachEvent.eventFlyer.url }}">
 <a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Post</button></a>
+<a href="{% url 'deleteUpcomingEvent' eachEvent.id %}"><button>Delete Post</button></a>
 <hr>
 {% endfor %}
 {% endblock content %}

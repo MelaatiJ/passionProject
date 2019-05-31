@@ -9,7 +9,7 @@ from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingE
 
 
 def index(request):
-    return HttpResponse("Testing server")
+    return render(request, "")
 
 
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
@@ -114,9 +114,18 @@ def editUpcomingEvent(request, entry_id):
         return redirect("viewAllUpcomingEvents")
     return render(request, "passionApp/editUpcomingEvent.html", context)
 
+# only admins can delete post
+def deleteUpcomingEvent(request, entry_id):
+    upcomingEvent = get_object_or_404(UpcomingEventsEntryModel, pk=entry_id)
+    context={
+        "upcomingEvent":upcomingEvent
+    }
+    if request.method =="POST":
+        upcomingEvent.delete()
 
-def deleteUpcomingEvent(request):
-    return HttpResponse("only admins can delete post")
+        return redirect("viewAllUpcomingEvents")
+
+    return render(request, "passionApp/deleteUpcomingEvent.html", context)
 
 
 # Everyone can view upcoming events whether your are logged in  or not
