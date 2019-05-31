@@ -16,9 +16,12 @@ Discussion Successfully can be added to the admin site !
 
 4:44 pm
 The discussion page is coming along nicely. You can make a discussion sucessfully and each discussion prints out a comment form.
+havent really got the comment form to be able to create more than one
 
 
 7:27 am
 WOOOHOOOO i finally fixed it. My images were not printing and only a small little box image was popping out, i tried many
 ways to fix it such as loading static on the page, and even changing it to an image field rather than a file field . It was as
 simple as adding .url to the for loop that listed everything
+
+

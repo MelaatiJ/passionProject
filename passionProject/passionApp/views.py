@@ -101,9 +101,18 @@ def addUpcomingEvent(request):
 
     return render(request, "passionApp/addUpcomingEvent.html", context)
 
+# "Only admins can edit post"
+def editUpcomingEvent(request, entry_id):
+    upcomingEvent = get_object_or_404(UpcomingEventsEntryModel, pk=entry_id)
 
-def editUpcomingEvent(request):
-    return HttpResponse("Only admins can edit post")
+    newUpcomingEvent= UpcomingEventForm(request.POST or None,request.FILES or None, instance=upcomingEvent)
+    context = {
+        "newUpcomingEvent": newUpcomingEvent
+    }
+    if newUpcomingEvent.is_valid():
+        newUpcomingEvent.save()
+        return redirect("viewAllUpcomingEvents")
+    return render(request, "passionApp/editUpcomingEvent.html", context)
 
 
 def deleteUpcomingEvent(request):

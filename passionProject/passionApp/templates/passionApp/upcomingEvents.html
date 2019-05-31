@@ -8,11 +8,12 @@
 {% for eachEvent in allEvents %}
 {{ eachEvent.event }}
 <br>
-{{ eachEvent.date }}
+{{ eachEvent.Date }}
 <br>
 {{ eachEvent.location }}
 <br>
 <img src="{{ eachEvent.eventFlyer.url }}">
+<a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Post</button></a>
 <hr>
 {% endfor %}
 {% endblock content %}

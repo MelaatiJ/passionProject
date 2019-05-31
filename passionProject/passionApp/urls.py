@@ -31,7 +31,7 @@ urlpatterns = [
 
     # events page
     path('addUpcomingEvent/', views.addUpcomingEvent, name='addUpcomingEvent'),
-    path('editUpcomingEvent/', views.editUpcomingEvent, name='editUpcomingEvent'),
+    path('editUpcomingEvent/<int:entry_id>/', views.editUpcomingEvent, name='editUpcomingEvent'),
     path('deleteUpcomingEvent/', views.deleteUpcomingEvent, name='deleteUpcomingEvent'),
     path('viewAllUpcomingEvents/', views.viewAllUpcomingEvents, name='viewAllUpcomingEvents'),
     path('listAllPastEvents/', views.listAllPastEvents, name='listAllPastEvents'),
