@@ -101,11 +101,12 @@ def addUpcomingEvent(request):
 
     return render(request, "passionApp/addUpcomingEvent.html", context)
 
+
 # "Only admins can edit post"
 def editUpcomingEvent(request, entry_id):
     upcomingEvent = get_object_or_404(UpcomingEventsEntryModel, pk=entry_id)
 
-    newUpcomingEvent= UpcomingEventForm(request.POST or None,request.FILES or None, instance=upcomingEvent)
+    newUpcomingEvent = UpcomingEventForm(request.POST or None, request.FILES or None, instance=upcomingEvent)
     context = {
         "newUpcomingEvent": newUpcomingEvent
     }
@@ -114,13 +115,14 @@ def editUpcomingEvent(request, entry_id):
         return redirect("viewAllUpcomingEvents")
     return render(request, "passionApp/editUpcomingEvent.html", context)
 
+
 # only admins can delete post
 def deleteUpcomingEvent(request, entry_id):
     upcomingEvent = get_object_or_404(UpcomingEventsEntryModel, pk=entry_id)
-    context={
-        "upcomingEvent":upcomingEvent
+    context = {
+        "upcomingEvent": upcomingEvent
     }
-    if request.method =="POST":
+    if request.method == "POST":
         upcomingEvent.delete()
 
         return redirect("viewAllUpcomingEvents")
@@ -158,6 +160,7 @@ def addBook(request):
         return redirect("listBooks")
     return render(request, "passionApp/addBook.html", context)
 
+
 # only admin and vp can edit book made
 def editBook(request, entry_id):
     book = get_object_or_404(LibraryEntryModel, pk=entry_id)
@@ -170,12 +173,20 @@ def editBook(request, entry_id):
         newBook.save()
         return redirect("listBooks")
 
-
     return render(request, "passionApp/editBook.html", context)
 
 
-def deleteBook(request):
-    return HttpResponse("Only admin and VP can delete book made")
+# pnly admin and VP can delete book made
+def deleteBook(request, entry_id):
+    book = get_object_or_404(LibraryEntryModel, pk=entry_id)
+    context = {
+        "book": book
+    }
+    if request.method == "POST":
+        book.delete()
+        return redirect("listBooks")
+    return render(request, "passionApp/deleteBook.html", context)
+
 
 # "Everyone can view books in the library so they can see the genres and different themes, good "
 # "for advertising
@@ -208,6 +219,7 @@ def editPhoto(request):
 
 def deletePhoto(request):
     return HttpResponse("Only whoever made post and ADMIN can delete photo")
+
 
 # Only members and ADMIN can view photos
 def listPhotos(request):

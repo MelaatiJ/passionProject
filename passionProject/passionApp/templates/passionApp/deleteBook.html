@@ -1,0 +1,10 @@
+{% extends 'passionApp/base.html' %}
+
+{% block form %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Are you sure you want to delete this event {{ book.title }} ?</h1>
+    <button type="submit">Yes</button>
+</form>
+
+{% endblock form %}
