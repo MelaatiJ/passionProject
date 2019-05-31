@@ -9,7 +9,7 @@ from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingE
 
 
 def index(request):
-    return render(request, "")
+    return render(request, "passionApp/index.html")
 
 
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
@@ -166,10 +166,14 @@ def editBook(request):
 def deleteBook(request):
     return HttpResponse("Only admin and VP can delete book made")
 
-
+# "Everyone can view books in the library so they can see the genres and different themes, good "
+# "for advertising
 def listBooks(request):
-    return HttpResponse("Everyone can view books in the library so they can see the genres and different themes, good "
-                        "for advertising")
+    books = LibraryEntryModel.objects.all()
+    context = {
+        "allBooks": books
+    }
+    return render(request, "passionApp/library.html", context)
 
 
 # photo gallery
@@ -194,9 +198,13 @@ def editPhoto(request):
 def deletePhoto(request):
     return HttpResponse("Only whoever made post and ADMIN can delete photo")
 
-
+# Only members and ADMIN can view photos
 def listPhotos(request):
-    return HttpResponse("Only members and ADMIN can view photos")
+    photos = GalleryEntryModel.objects.all()
+    context = {
+        "allPhotots": photos
+    }
+    return render(request, "passionApp/gallery.html", context)
 
 
 #  Member page ( not being implemented until everything else is complete )

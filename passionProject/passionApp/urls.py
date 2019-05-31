@@ -38,8 +38,8 @@ urlpatterns = [
 
     # library page
     path('addBook/', views.addBook, name='addBook'),
-    path('editBook/', views.editBook, name='editBook'),
-    path('deleteBook/', views.deleteBook, name='deleteBook'),
+    path('editBook/<int:entry_id>/', views.editBook, name='editBook'),
+    path('deleteBook/<int:entry_id>/', views.deleteBook, name='deleteBook'),
     path('listBooks/', views.listBooks, name='listBooks'),
 
     # Gallery Page
