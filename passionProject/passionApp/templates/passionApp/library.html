@@ -1,2 +1,17 @@
 {% extends 'passionApp/base.html' %}
 
+{% block content %}
+{% for eachBook in allBooks %}
+{{ eachBook.title }}
+<br>
+<img src="{{ eachBook.cover.url }}">
+<br>
+<h1>Link:</h1><a href="{{ eachBook.link }}">{{ eachBook.link }}</a>
+{% endfor %}
+{% endblock content %}
+
+
+{% block addPost %}
+<a href="{% url 'addBook' %}">Add a Book to the Library</a>
+{% endblock addPost %}
+

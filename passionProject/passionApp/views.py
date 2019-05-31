@@ -153,14 +153,25 @@ def addBook(request):
         "form": form
     }
     if request.method == "POST":
-        LibraryEntryModel.objects.create(title=request.POST["title"], cover=request.POST["cover"],
+        LibraryEntryModel.objects.create(title=request.POST["title"], cover=request.FILES["cover"],
                                          link=request.POST["link"])
         return redirect("listBooks")
     return render(request, "passionApp/addBook.html", context)
 
+# only admin and vp can edit book made
+def editBook(request, entry_id):
+    book = get_object_or_404(LibraryEntryModel, pk=entry_id)
 
-def editBook(request):
-    return HttpResponse("only admin and vp can edit book made ")
+    newBook = LibraryForm(request.POST or None, request.FILES or None, instance=book)
+    context = {
+        "newBook": newBook
+    }
+    if newBook.is_valid():
+        newBook.save()
+        return redirect("listBooks")
+
+
+    return render(request, "passionApp/editBook.html", context)
 
 
 def deleteBook(request):
