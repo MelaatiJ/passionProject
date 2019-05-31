@@ -3,6 +3,25 @@
 {% block content %}
 <h1>Welcome to Manga and Manhwa Book Club</h1>
 
-{% load static %}
-<img src="{" alt="">
+
+{% for eachNani in allNani %}
+<br>
+{{ eachNani.topic }}
+<br>
+{{ eachNani.date }}
+<br>
+<img src="{{ eachNani.image.url }}">
+<br>
+{{ eachNani.entry }}
+<br>
+{{ eachNani.video }}
+<br>
+<a href="{{ eachNani.link }}">{{ eachBook.link }}</a>
+{% endfor %}
+
+
 {% endblock content %}
+
+{% block addPost %}
+<a href="{% url 'addNani' %}">NANI?? share a post</a>
+{% endblock addPost %}

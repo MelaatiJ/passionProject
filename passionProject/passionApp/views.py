@@ -9,7 +9,12 @@ from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingE
 
 
 def index(request):
-    return render(request, "passionApp/index.html")
+    naniPost = NaniEntryModel.objects.all()
+    context = {
+        "allNani": naniPost
+    }
+    return render(request, "passionApp/index.html", context)
+
 
 
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
@@ -22,15 +27,20 @@ def addNani(request):
     }
     if request.method == "POST":
         NaniEntryModel.objects.create(topic=request.POST["topic"], date=request.POST["date"],
-                                      image=request.POST["image"],
-                                      entry=request.POST["entry"], video=request.POST["video"], URL_link=["URL_link"])
+                                      image=request.FILES["image"],
+                                      entry=request.POST["entry"], video=request.FILES["video"], URL_link=["URL_link"])
         return redirect("index")
 
     return render(request, "passionApp/addNani.html", context)
 
 
-def viewAllNani(request):
-    return HttpResponse("Everyone can view the info the admins post weather you are a member or not")
+# Everyone can view the info the admins post weather you are a member or not"
+# def viewAllNani(request):
+#     naniPost = NaniEntryModel.objects.all()
+#     context = {
+#         "allNani": naniPost
+#     }
+#     return render(request, "passionApp/index.html", context)
 
 
 def editNani(request):

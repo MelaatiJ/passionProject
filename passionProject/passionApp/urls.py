@@ -13,7 +13,7 @@ urlpatterns = [
 
     # whats new page
     path('addNani/', views.addNani, name='addNani'),
-    path('viewAllNani/', views.viewAllNani, name='viewAllNani'),
+    # path('viewAllNani/', views.viewAllNani, name='viewAllNani'),
     path('editNani/', views.editNani, name='editNani'),
     path('deleteNani/', views.deleteNani, name='deleteNani'),
 

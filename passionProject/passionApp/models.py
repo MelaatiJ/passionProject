@@ -10,9 +10,9 @@ class NaniEntryModel(models.Model):
     topic = models.CharField(max_length=200, default="", blank=False)
     date = models.DateTimeField(default=datetime.now)
     image = models.FileField(upload_to='images', blank=True)
-    entry = models.TextField(max_length=5000, default="")
-    video = models.FileField(upload_to='videos', null=True, verbose_name="")
-    URL_link = models.CharField(max_length=200, default="")
+    entry = models.TextField(max_length=5000, default="", blank=True)
+    video = models.FileField(upload_to='videos', null=True, verbose_name="", blank=True)
+    URL_link = models.CharField(max_length=200, default="", blank=True)
 
 
 # 3
@@ -22,7 +22,7 @@ class DiscussionEntryModel(models.Model):
     image = models.FileField(upload_to='images', blank=True)
     entry = models.TextField(max_length=5000, default="", blank=False)
     video = models.FileField(upload_to='videos', blank=True, verbose_name="")
-    URL_link = models.CharField(max_length=200, default="", blank=True)
+    URL_link = models.URLField()
 
 
 # comment form
