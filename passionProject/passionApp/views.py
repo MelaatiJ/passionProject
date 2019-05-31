@@ -51,7 +51,7 @@ def addDiscussion(request):
     }
     if request.method == "POST":
         DiscussionEntryModel.objects.create(topic=request.POST["topic"], date=request.POST["date"],
-                                            image=request.POST["image"], entry=request.POST["entry"],
+                                            image=request.FILES["image"], entry=request.POST["entry"],
                                             video=request.POST["video"], URL_link=request.POST["URL_link"])
         return redirect("viewAllDiscussion")
 
@@ -207,25 +207,42 @@ def addPhoto(request):
         "form": form
     }
     if request.method == "POST":
-        GalleryEntryModel.objects.create(event=request.POST["event"], image=request.POST["image"],
+        GalleryEntryModel.objects.create(event=request.POST["event"], image=request.FILES["image"],
                                          imageDetails=request.POST["imageDetails"], date=request.POST["date"])
         return redirect("listPhotos")
     return render(request, "passionApp/addPhoto.html", context)
 
 
-def editPhoto(request):
-    return HttpResponse("Whoever made post and ADMIN can edit photo")
+# Whoever made post and ADMIN can edit photo
+def editPhoto(request, entry_id):
+    photo = get_object_or_404(GalleryEntryModel, pk=entry_id)
+    newPhoto = GalleryForm(request.POST or None, request.FILES or None, instance=photo)
+    context = {
+        "newPhoto": newPhoto
+    }
+    if newPhoto.is_valid():
+        newPhoto.save()
+        return redirect("listPhotos")
+    return render(request, "passionApp/editPhoto.html", context)
 
 
-def deletePhoto(request):
-    return HttpResponse("Only whoever made post and ADMIN can delete photo")
+# Only whoever made post and ADMIN can delete photo
+def deletePhoto(request, entry_id):
+    photo = get_object_or_404(GalleryEntryModel, pk=entry_id)
+    context = {
+        "photo": photo
+    }
+    if request.method == "POST":
+        photo.delete()
+        return redirect("listPhotos")
+    return render(request, "passionApp/deletePhoto.html", context)
 
 
 # Only members and ADMIN can view photos
 def listPhotos(request):
     photos = GalleryEntryModel.objects.all()
     context = {
-        "allPhotots": photos
+        "allPhotos": photos
     }
     return render(request, "passionApp/gallery.html", context)
 

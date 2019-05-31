@@ -44,8 +44,8 @@ urlpatterns = [
 
     # Gallery Page
     path('addPhoto/', views.addPhoto, name='addPhoto'),
-    path('editPhoto/', views.editPhoto, name='editPhoto'),
-    path('deletePhoto/', views.deletePhoto, name='deletePhoto'),
+    path('editPhoto/<int:entry_id>/', views.editPhoto, name='editPhoto'),
+    path('deletePhoto/<int:entry_id>/', views.deletePhoto, name='deletePhoto'),
     path('listPhotos/', views.listPhotos, name='listPhotos'),
 
 ]

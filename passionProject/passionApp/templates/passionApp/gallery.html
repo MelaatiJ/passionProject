@@ -1,2 +1,23 @@
 {% extends 'passionApp/base.html' %}
 
+{% block content %}
+{% for eachPhoto in allPhotos %}
+<br>
+{{ eachPhoto.event }}
+<br>
+{{ eachPhoto.date }}
+<br>
+<img src="{{ eachPhoto.image.url }}">
+<br>
+{{ eachPhoto.imageDetails }}
+<br>
+<a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
+<a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
+{% endfor %}
+{% endblock content %}
+
+
+{% block addPost %}
+<a href="{% url 'addPhoto' %}">Add a Photo to the Gallery</a>
+{% endblock addPost %}
+
