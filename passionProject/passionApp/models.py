@@ -46,7 +46,7 @@ class UpcomingEventsEntryModel(models.Model):
     event= models.CharField(max_length=200, blank=False)
     Date = models.DateField()
     location = models.CharField(max_length=200, blank=False)
-    flyer = models.FileField(upload_to='flyers', blank=False,)
+    eventFlyer = models.FileField(upload_to='flyers', blank=False,)
 
 
 # 6. Library

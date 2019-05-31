@@ -87,13 +87,16 @@ def deleteDiscussion(request):
 
 
 def addUpcomingEvent(request):
+    print(request.POST)
     form = UpcomingEventForm(request.POST or None, request.FILES or None)
     context = {
         "form": form
     }
     if request.method == "POST":
         UpcomingEventsEntryModel.objects.create(event=request.POST["event"], Date=request.POST["Date"],
-                                                location=request.POST["location"], flyer=request.POST["flyer"])
+                                                location=request.POST["location"],
+                                                eventFlyer=request.FILES["eventFlyer"])
+
         return redirect("viewAllUpcomingEvents")
 
     return render(request, "passionApp/addUpcomingEvent.html", context)
@@ -109,7 +112,11 @@ def deleteUpcomingEvent(request):
 
 # Everyone can view upcoming events whether your are logged in  or not
 def viewAllUpcomingEvents(request):
-    return render(request, "passionApp/upcomingEvents.html")
+    upcomingEvents = UpcomingEventsEntryModel.objects.all()
+    context = {
+        "allEvents": upcomingEvents
+    }
+    return render(request, "passionApp/upcomingEvents.html", context)
 
 
 # past events
