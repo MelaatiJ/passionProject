@@ -6,7 +6,7 @@
 <br>
 <img src="{{ eachBook.cover.url }}">
 <br>
-<h1>Link:</h1><a href="{{ eachBook.link }}">{{ eachBook.link }}</a>
+<h1>Link:</h1><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.link }}</a>
 <br>
 <a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>
 <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
