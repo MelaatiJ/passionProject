@@ -28,6 +28,7 @@ class DiscussionEntryModel(models.Model):
 # comment form
 class CommentEntryModel(models.Model):
     comment = models.CharField(max_length=200, blank=False)
+    # discussion = models.ForeignKey(DiscussionEntryModel, on_delete=models.CASCADE, null=True, blank=True)
 
 
 # 4. Gallery Form

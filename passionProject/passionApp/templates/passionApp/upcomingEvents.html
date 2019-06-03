@@ -4,6 +4,7 @@
 
 
 {% block content %}
+<h1>Upcoming Events</h1>
 
 {% for eachEvent in allEvents %}
 {{ eachEvent.event }}
@@ -13,8 +14,8 @@
 {{ eachEvent.location }}
 <br>
 <img src="{{ eachEvent.eventFlyer.url }}">
-<a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Post</button></a>
-<a href="{% url 'deleteUpcomingEvent' eachEvent.id %}"><button>Delete Post</button></a>
+<a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Event</button></a>
+<a href="{% url 'deleteUpcomingEvent' eachEvent.id %}"><button>Delete Event</button></a>
 <hr>
 {% endfor %}
 {% endblock content %}

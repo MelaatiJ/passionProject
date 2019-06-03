@@ -1,0 +1,24 @@
+******************************************** 11 am update *************************************************************
+
+
+So far you can
+1. Add post to the home page
+* need to make it only  accessible admin and Athena
+
+2. You can Edit and Delete post
+* need to make it only accessible admin and Athena
+
+3. You can Add a Discussion
+* accessible to everyone
+* still working on comments and have to fix the model to be able to add multiple comments on each discussion
+
+4. You can add an event, edit ,delete and view all events
+* need to make it only accessible to admin and Athena
+* need to be able to see whether it is a past event or current
+
+5. You can add a book to the library, delete, and view all books
+
+6. You can add an image to the gallery , delete, edit and view the images.
+* everyone can add an image
+
+WORK ON BEING ABLE TO UPLOAD VIDEO

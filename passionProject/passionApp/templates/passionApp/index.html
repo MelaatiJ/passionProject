@@ -17,6 +17,8 @@
 {{ eachNani.video }}
 <br>
 <a href="{{ eachNani.link }}">{{ eachBook.link }}</a>
+<a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>
+<a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>
 {% endfor %}
 
 

@@ -42,13 +42,32 @@ def addNani(request):
 #     }
 #     return render(request, "passionApp/index.html", context)
 
+# Need to be able to edit any post made from the President and VP
+def editNani(request, entry_id):
+    nani = get_object_or_404(NaniEntryModel, pk=entry_id)
 
-def editNani(request):
-    return HttpResponse("Need to be able to edit any post made from the President and VP")
+    newNani = NaniForm(request.POST or None, request.FILES or None, instance=nani)
+    context = {
+        "newNani":newNani
+    }
+    if newNani.is_valid():
+        newNani.save()
+        return redirect("index")
+    return render(request, "passionApp/editNani.html", context)
 
 
-def deleteNani(request):
-    return HttpResponse("Need to be able to delete any post made from President and VP")
+# Need to be able to delete any post made from President and VP
+def deleteNani(request, entry_id):
+    nani = get_object_or_404(NaniEntryModel, pk=entry_id)
+    context = {
+        "nani": nani
+    }
+    if request.method == "POST":
+        nani.delete()
+        return redirect("index")
+
+    return render(request, "passionApp/deleteNani.html", context)
+
 
 
 # Discussion Post Page
@@ -70,10 +89,12 @@ def addDiscussion(request):
 
 def viewAllDiscussion(request):
     form = CommentForm(request.POST or None, request.FILES or None)
+    forms = CommentEntryModel.objects.all()
     discussionPosts = DiscussionEntryModel.objects.all()
     context = {
         "form": form,
-        "allPosts": discussionPosts
+        "allPosts": discussionPosts,
+        "forms":forms
     }
     if request.method == "POST":
         CommentEntryModel.objects.create(comment=request.POST["comment"])

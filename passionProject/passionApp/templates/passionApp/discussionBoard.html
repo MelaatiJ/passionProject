@@ -1,9 +1,12 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
+<h1>Discussion Board</h1>
+<div>
 {% for eachPost in allPosts %}
 {{ eachPost.topic }}
 <br>
+
 {{ eachPost.date }}
 <br>
 {{ eachPost.image }}
@@ -19,7 +22,13 @@
     {{ form.as_p }}
     <button>Comment</button>
 </form>
+
+
 {% endfor %}
+{% for eachComment in forms %}
+{{ eachComment.comment }}
+{% endfor %}
+
 {% endblock content %}
 
 {% block addPost %}
