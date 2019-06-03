@@ -1,7 +1,9 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
+<div>
 <h1>Welcome to Manga and Manhwa Book Club</h1>
+    <a href="{% url 'addNani' %}">NANI?? share a post</a>
 
 
 {% for eachNani in allNani %}
@@ -14,16 +16,11 @@
 <br>
 {{ eachNani.entry }}
 <br>
-{{ eachNani.video }}
 <br>
-<a href="{{ eachNani.link }}">{{ eachBook.link }}</a>
+<a href="{{ eachNani.link }}">{{ eachNani.link }}</a>
 <a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>
 <a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>
 {% endfor %}
 
-
+</div>
 {% endblock content %}
-
-{% block addPost %}
-<a href="{% url 'addNani' %}">NANI?? share a post</a>
-{% endblock addPost %}

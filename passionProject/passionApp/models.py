@@ -9,10 +9,10 @@ from datetime import datetime
 class NaniEntryModel(models.Model):
     topic = models.CharField(max_length=200, default="", blank=False)
     date = models.DateTimeField(default=datetime.now)
-    image = models.FileField(upload_to='images', blank=True)
+    image = models.ImageField(upload_to='images', null=True, blank=True)
     entry = models.TextField(max_length=5000, default="", blank=True)
-    video = models.FileField(upload_to='videos', null=True, verbose_name="", blank=True)
-    URL_link = models.CharField(max_length=200, default="", blank=True)
+    video = models.FileField(upload_to='videos', null=True, blank=True)
+    URL_link = models.URLField(blank=True)
 
 
 # 3
@@ -21,8 +21,8 @@ class DiscussionEntryModel(models.Model):
     date = models.DateTimeField(default=datetime.now)
     image = models.FileField(upload_to='images', blank=True)
     entry = models.TextField(max_length=5000, default="", blank=False)
-    video = models.FileField(upload_to='videos', blank=True, verbose_name="")
-    URL_link = models.URLField()
+    video = models.FileField(upload_to='videos', blank=True, null=True)
+    URL_link = models.URLField(blank=True)
 
 
 # comment form

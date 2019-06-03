@@ -16,7 +16,6 @@ def index(request):
     return render(request, "passionApp/index.html", context)
 
 
-
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
 
 
@@ -27,8 +26,8 @@ def addNani(request):
     }
     if request.method == "POST":
         NaniEntryModel.objects.create(topic=request.POST["topic"], date=request.POST["date"],
-                                      image=request.FILES["image"],
-                                      entry=request.POST["entry"], video=request.FILES["video"], URL_link=["URL_link"])
+                                      image=request.FILES["image"], entry=request.POST["entry"],
+                                      video=request.FILES["video"], URL_link=request.POST["URL_link"])
         return redirect("index")
 
     return render(request, "passionApp/addNani.html", context)
@@ -48,7 +47,7 @@ def editNani(request, entry_id):
 
     newNani = NaniForm(request.POST or None, request.FILES or None, instance=nani)
     context = {
-        "newNani":newNani
+        "newNani": newNani
     }
     if newNani.is_valid():
         newNani.save()
@@ -67,7 +66,6 @@ def deleteNani(request, entry_id):
         return redirect("index")
 
     return render(request, "passionApp/deleteNani.html", context)
-
 
 
 # Discussion Post Page
@@ -94,7 +92,7 @@ def viewAllDiscussion(request):
     context = {
         "form": form,
         "allPosts": discussionPosts,
-        "forms":forms
+        "forms": forms
     }
     if request.method == "POST":
         CommentEntryModel.objects.create(comment=request.POST["comment"])
