@@ -1,7 +1,10 @@
 {% extends 'passionApp/base.html' %}
 
 {% block form %}
-
+<div class="header">
+    <h1>Add A Nani Post</h1>
+</div>
+<hr/>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}

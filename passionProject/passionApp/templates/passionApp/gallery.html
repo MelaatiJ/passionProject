@@ -1,7 +1,7 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
-<div id="gallery_header">
+<div class="header">
     <h1>Adventures</h1>
     <a href="{% url 'addPhoto' %}">Add a Photo to the Gallery</a>
 </div>
@@ -16,6 +16,7 @@
         {{ eachPhoto.date }}
 
         <img class="gallery_image" src="{{ eachPhoto.image.url }}">
+        <br>
         {{ eachPhoto.imageDetails }}
         <br>
         <a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
