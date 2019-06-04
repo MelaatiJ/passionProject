@@ -10,18 +10,18 @@
 <div id="gallery_grid">
 {% for eachPhoto in allPhotos %}
 
-    <section class="gallery_body">
-        {{ eachPhoto.event }}
-
-        {{ eachPhoto.date }}
-
-        <img class="gallery_image" src="{{ eachPhoto.image.url }}">
-        <br>
-        {{ eachPhoto.imageDetails }}
-        <br>
-        <a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
-        <a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
-    </section>
+        <section class="gallery_body">
+            <br>
+            <h3>{{ eachPhoto.event }}</h3>
+            <h5>{{ eachPhoto.date }}</h5>
+            <img class="gallery_image" src="{{ eachPhoto.image.url }}">
+            <h4>{{ eachPhoto.imageDetails }}</h4>
+            <a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
+            <a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
+        </section>
+<!--        <section class="gallery_buttons">-->
+<!--            -->
+<!--        </section>-->
 <!--    <section class="gallery_buttons">-->
 <!--      -->
 
