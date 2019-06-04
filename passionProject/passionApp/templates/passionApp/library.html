@@ -1,7 +1,12 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
-<h1>Library</h1>
+<div id="library_header">
+    <h1>Library</h1>
+    <a href="{% url 'addBook' %}">Add a Book to the Library</a>
+</div>
+<hr/>
+
 {% for eachBook in allBooks %}
 {{ eachBook.title }}
 <br>
@@ -13,9 +18,3 @@
 <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
 {% endfor %}
 {% endblock content %}
-
-
-{% block addPost %}
-<a href="{% url 'addBook' %}">Add a Book to the Library</a>
-{% endblock addPost %}
-

@@ -1,24 +1,39 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
-<h1>Adventures</h1>
+<div id="gallery_header">
+    <h1>Adventures</h1>
+    <a href="{% url 'addPhoto' %}">Add a Photo to the Gallery</a>
+</div>
+
+<hr/>
+<div id="gallery_grid">
 {% for eachPhoto in allPhotos %}
-<br>
-{{ eachPhoto.event }}
-<br>
-{{ eachPhoto.date }}
-<br>
-<img src="{{ eachPhoto.image.url }}">
-<br>
-{{ eachPhoto.imageDetails }}
-<br>
-<a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
-<a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
-{% endfor %}
+
+    <section class="gallery_body">
+        {{ eachPhoto.event }}
+
+        {{ eachPhoto.date }}
+
+        <img class="gallery_image" src="{{ eachPhoto.image.url }}">
+        {{ eachPhoto.imageDetails }}
+        <br>
+        <a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
+        <a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
+    </section>
+<!--    <section class="gallery_buttons">-->
+<!--      -->
+
+<!--    </section>-->
+
+
+
+
+
+        {% endfor %}
+
+</div>
 {% endblock content %}
 
 
-{% block addPost %}
-<a href="{% url 'addPhoto' %}">Add a Photo to the Gallery</a>
-{% endblock addPost %}
 

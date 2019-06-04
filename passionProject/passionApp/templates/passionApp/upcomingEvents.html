@@ -4,7 +4,12 @@
 
 
 {% block content %}
-<h1>Upcoming Events</h1>
+<div id="upcomingEvents_header">
+    <h1>Upcoming Events</h1>
+    <a href="{% url 'addUpcomingEvent' %}">Add an Event</a>
+</div>
+<hr/>
+
 
 {% for eachEvent in allEvents %}
 {{ eachEvent.event }}
@@ -19,7 +24,3 @@
 <hr>
 {% endfor %}
 {% endblock content %}
-
-{% block addPost %}
-<a href="{% url 'addUpcomingEvent' %}">Add an Event</a>
-{% endblock addPost %}

@@ -1,7 +1,12 @@
 {% extends 'passionApp/base.html' %}
 
 {% block content %}
-<h1>Discussion Board</h1>
+<div id="discussion_header">
+    <h1>Discussion Board</h1>
+    <a href="{% url 'addDiscussion' %}">Stir up some Caos and Add a Post!</a>
+</div>
+<hr/>
+
 <div>
 {% for eachPost in allPosts %}
 {{ eachPost.topic }}
@@ -30,7 +35,3 @@
 {% endfor %}
 
 {% endblock content %}
-
-{% block addPost %}
-<a href="{% url 'addDiscussion' %}">Stir up some Caos and Add a Post!</a>
-{% endblock addPost %}

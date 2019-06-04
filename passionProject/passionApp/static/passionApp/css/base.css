@@ -1,0 +1,39 @@
+#gallery_grid{
+    display: grid;
+    /*grid-template-rows:repeat(4, 1fr);*/
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery_body{
+    grid-row: 1;
+    padding: 10%;
+    text-align: center;
+}
+
+/*.gallery_buttons{*/
+/*    grid-row: 2;*/
+/*}*/
+
+.gallery_image{
+    width: 30%;
+    height: 30%;
+}
+
+#gallery_header{
+    text-align: center;
+}
+
+#upcomingEvents_header{
+    text-align: center;
+}
+
+#index_header{
+    text-align: center;
+}
+#library_header{
+    text-align: center;
+}
+
+#discussion_header{
+    text-align: center;
+}
