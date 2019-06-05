@@ -4,23 +4,28 @@
 
 
 {% block content %}
-<div id="upcomingEvents_header">
+<div class="header">
     <h1>Upcoming Events</h1>
     <a href="{% url 'addUpcomingEvent' %}">Add an Event</a>
 </div>
 <hr/>
 
 
-{% for eachEvent in allEvents %}
-{{ eachEvent.event }}
-<br>
-{{ eachEvent.Date }}
-<br>
-{{ eachEvent.location }}
-<br>
-<img src="{{ eachEvent.eventFlyer.url }}">
-<a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Event</button></a>
-<a href="{% url 'deleteUpcomingEvent' eachEvent.id %}"><button>Delete Event</button></a>
-<hr>
+<div id="upcomingEvents_body">
+    {% for eachEvent in allEvents %}
+    <section>
+        {{ eachEvent.event }}
+        <br>
+        {{ eachEvent.Date }}
+        <br>
+        {{ eachEvent.location }}
+        <br>
+        <img class="upcomingEvent_image" src="{{ eachEvent.eventFlyer.url }}">
+        <br>
+        <a href="{% url 'editUpcomingEvent' eachEvent.id %}"><button>Edit Event</button></a>
+        <a href="{% url 'deleteUpcomingEvent' eachEvent.id %}"><button>Delete Event</button></a>
+    </section>
 {% endfor %}
+
+</div>
 {% endblock content %}

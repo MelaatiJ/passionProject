@@ -58,6 +58,7 @@ form{
 
 .library_cover{
     grid-column: 1;
+    padding: 5%;
 }
 
 .library_link{
@@ -65,8 +66,8 @@ form{
 }
 
 .library_image{
-    width: 500px;
-    height:500px;
+    height:300px;
+    padding: 5%;
     text-align: center;
 
 }
@@ -84,10 +85,22 @@ form{
 }
 
 .index_image{
-    width:50% ;
+    width:500px ;
 }
 
 
 .navBar{
     text-align: center;
+
+}
+
+#upcomingEvents_body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.upcomingEvent_image{
+    text-align: center;
+    width: 500px;
 }
