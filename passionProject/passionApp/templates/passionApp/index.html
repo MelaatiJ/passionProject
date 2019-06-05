@@ -7,21 +7,27 @@
 </div>
 <hr/>
 
-<div>
+<div id="index_body">
 {% for eachNani in allNani %}
-<br>
-{{ eachNani.topic }}
-<br>
-{{ eachNani.date }}
-<br>
-<img src="{{ eachNani.image.url }}">
-<br>
-{{ eachNani.entry }}
-<br>
-<br>
-<a href="{{ eachNani.link }}">{{ eachNani.link }}</a>
-<a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>
-<a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>
+    <section class="index_topic">
+        {{ eachNani.topic }}
+    </section>
+    <section class="index_date">
+        {{ eachNani.date }}
+    </section>
+    <section class="index_image">
+        <img src="{{ eachNani.image.url }}">
+    </section>
+    <section class="index_entry">
+        {{ eachNani.entry }}
+        <a href="{{ eachNani.link }}">{{ eachNani.link }}</a>
+    </section>
+    <section class="index_buttons">
+
+        <a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>
+        <a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>
+    </section>
+
 {% endfor %}
 
 </div>

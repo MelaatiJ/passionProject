@@ -7,14 +7,24 @@
 </div>
 <hr/>
 
+<div id="library_grid">
+
 {% for eachBook in allBooks %}
-{{ eachBook.title }}
-<br>
-<img src="{{ eachBook.cover.url }}">
-<br>
-<h1>Link:</h1><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.link }}</a>
-<br>
-<a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>
-<a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
-{% endfor %}
+    <section class="library_title">
+        <h1>{{ eachBook.title }}</h1>
+    </section>
+    <section class="library_cover">
+        <img class="library_image" src="{{ eachBook.cover.url }}">
+    </section>
+    <section class="library_link">
+        <a href="{{ eachBook.link }}" target="_blank">{{ eachBook.link }}</a>
+    </section>
+    <section>
+
+        <a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>
+        <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
+    </section>
+
+    {% endfor %}
+</div>
 {% endblock content %}

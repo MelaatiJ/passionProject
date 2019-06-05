@@ -15,7 +15,7 @@
             <h3>{{ eachPhoto.event }}</h3>
             <h5>{{ eachPhoto.date }}</h5>
             <img class="gallery_image" src="{{ eachPhoto.image.url }}">
-            <h4>{{ eachPhoto.imageDetails }}</h4>
+            <h5>{{ eachPhoto.imageDetails }}</h5>
             <a href="{% url 'editPhoto' eachPhoto.id %}"><button>Edit Photo</button></a>
             <a href="{% url 'deletePhoto' eachPhoto.id %}"><button>Delete Photo</button></a>
         </section>
