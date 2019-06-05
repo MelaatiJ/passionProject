@@ -13,17 +13,46 @@
 
 <!--    <h1>Manga and Manhwa Book Club</h1>-->
 <!--</div>-->
-<div class="navBar">
-    <a href="{% url 'index' %}">Home</a>
-    /
-    <a href="{% url 'viewAllDiscussion' %}">Lets Talk about it</a>
-    /
-    <a href="{% url 'listPhotos' %}">Behind the Scenes</a>
-    /
-    <a href="{% url 'listBooks' %}">Bookdom</a>
-    /
-    <a href="{% url 'viewAllUpcomingEvents' %}">Events</a>
-</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Manga and Manhwa Book Club</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'viewAllDiscussion' %}">Discussion Board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'listPhotos' %}">Adventures</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'listBooks' %}">Library</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'viewAllUpcomingEvents' %}">Events</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+            Discover the Asian Kingdoms
+    </span>
+    </div>
+</nav>
+<!--<div class="navBar">-->
+<!--    <a href="{% url 'index' %}">Home</a>-->
+<!--    /-->
+<!--    <a href="{% url 'viewAllDiscussion' %}">Lets Talk about it</a>-->
+<!--    /-->
+<!--    <a href="{% url 'listPhotos' %}">Behind the Scenes</a>-->
+<!--    /-->
+<!--    <a href="{% url 'listBooks' %}">Bookdom</a>-->
+<!--    /-->
+<!--    <a href="{% url 'viewAllUpcomingEvents' %}">Events</a>-->
+<!--</div>-->
 
 {% block navbar %}
 {% endblock navbar %}
