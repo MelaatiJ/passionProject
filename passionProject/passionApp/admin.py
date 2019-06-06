@@ -8,7 +8,7 @@ from .models import CommentEntryModel
 from .models import GalleryEntryModel
 from .models import UpcomingEventsEntryModel
 from .models import LibraryEntryModel
-from .models import MembershipEntryModel
+# from .models import MembershipEntryModel
 
 
 admin.site.register(NaniEntryModel)
@@ -17,6 +17,6 @@ admin.site.register(CommentEntryModel)
 admin.site.register(GalleryEntryModel)
 admin.site.register(UpcomingEventsEntryModel)
 admin.site.register(LibraryEntryModel)
-admin.site.register(MembershipEntryModel)
+# admin.site.register(MembershipEntryModel)
 
 

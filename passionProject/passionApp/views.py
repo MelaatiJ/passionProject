@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import NaniEntryModel, DiscussionEntryModel, GalleryEntryModel, CommentEntryModel, LibraryEntryModel, \
-    MembershipEntryModel, UpcomingEventsEntryModel
-from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingEventForm, LibraryForm, MembershipForm
+from .models import NaniEntryModel, DiscussionEntryModel, GalleryEntryModel, CommentEntryModel, LibraryEntryModel,UpcomingEventsEntryModel
+from .forms import NaniForm, DiscussionForm, CommentForm, GalleryForm, UpcomingEventForm, LibraryForm
 
 
 # Create your views here.

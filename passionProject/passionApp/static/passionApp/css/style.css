@@ -38,6 +38,7 @@
 
 .header{
     text-align: center;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 form{
@@ -53,29 +54,22 @@ form{
 
 #library_grid{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
 }
 
-.library_cover{
-    grid-column: 1;
-    padding: 5%;
-}
+/*.library_cover{*/
+/*    grid-column: 1;*/
+/*    padding: 5%;*/
+/*}*/
 
-.library_link{
-    grid-column: 2;
-}
 
-.library_image{
-    height:300px;
-    padding: 5%;
-    text-align: center;
 
-}
+/*.library_image{*/
+/*    height:300px;*/
+/*    padding: 5%;*/
+/*    text-align: center;*/
 
-.library_title{
-    text-align: center;
-    grid-column: 2;
-}
+/*}*/
 
 #index_body{
     display: grid;

@@ -6,8 +6,11 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'passionApp/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'passionApp/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <script src="{% static 'passionApp/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'passionApp/js/bootstrap.js' %}"></script>
+
 </head>
 <body>
 
@@ -15,7 +18,7 @@
 <!--</div>-->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Manga and Manhwa Book Club</a>
+    <a class="navbar-brand" href="{% url 'index' %}">Manga and Manhwa Book Club</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +31,7 @@
                 <a class="nav-link" href="{% url 'viewAllDiscussion' %}">Discussion Board</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'listPhotos' %}">Adventures</a>
+                <a class="nav-link" href="{% url 'listPhotos' %}">Pics</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'listBooks' %}">Library</a>

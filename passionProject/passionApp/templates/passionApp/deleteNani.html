@@ -7,12 +7,13 @@
     <h1>Delete ???????</h1>
     <img src="" alt="">
     <button type="submit">Yes</button>
+    <a href="{% url 'index' %}"><button type="submit">No</button></a>
     {{ nani.topic }}
     {{ nani.date }}
     {{ nani.image }}
     {{ nani.entry }}
     <img src="{{ nani.image.url }}">
 </form>
-<a href="{% url 'index' %}"><button type="submit">No</button></a>
+
 
 {% endblock form %}

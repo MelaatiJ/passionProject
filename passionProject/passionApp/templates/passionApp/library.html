@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="header">
-    <h1>Library</h1>
+    <h1 class="animated bounceInDown">Library</h1>
     <a href="{% url 'addBook' %}">Add a Book to the Library</a>
 </div>
 <hr/>
@@ -11,18 +11,12 @@
 
 {% for eachBook in allBooks %}
     <section class="library_title">
-        <h1>{{ eachBook.title }}</h1>
-    </section>
-    <section class="library_cover">
+        <h1><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.title }}</a></h1>
         <img class="library_image" src="{{ eachBook.cover.url }}">
-    </section>
-    <section class="library_link">
-        <a href="{{ eachBook.link }}" target="_blank">{{ eachBook.link }}</a>
-    </section>
-    <section>
-
+        <br>
         <a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>
         <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
+        <br>
     </section>
 
     {% endfor %}

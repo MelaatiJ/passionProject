@@ -14,6 +14,17 @@ class NaniEntryModel(models.Model):
     video = models.FileField(upload_to='videos', null=True, blank=True)
     URL_link = models.URLField(blank=True)
 
+# class UserModel(models.Model):
+#     name=models.CharField(max_length=200, default="", blank=False)
+#     email=models.EmailField(max_length=200, blank=False)
+#     profilePic = models.FileField(upload_to='profilePics', blank=True)
+#     moto = models.CharField(max_length=300, blank=True)
+#     password = models.CharField(max_length=20, blank=False)
+#     user_fk = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+#
+#     def __str__(self):
+#         return self.name
+
 
 # 3
 class DiscussionEntryModel(models.Model):
@@ -23,6 +34,7 @@ class DiscussionEntryModel(models.Model):
     entry = models.TextField(max_length=5000, default="", blank=False)
     video = models.FileField(upload_to='videos', blank=True, null=True)
     URL_link = models.URLField(blank=True)
+    # user_model_fk = models.ForeignKey(UserModel, on_delete=models.CASCADE, null=True, blank=True)
 
 
 # comment form
@@ -59,12 +71,7 @@ class LibraryEntryModel(models.Model):
 
 #7 Membership form that is not going to be implemented until everything else is complete
 
-class MembershipEntryModel(models.Model):
-    name=models.CharField(max_length=200, default="", blank=False)
-    email=models.EmailField(max_length=200, blank=False)
-    profilePic = models.FileField(upload_to='profilePics', blank=True)
-    moto = models.CharField(max_length=300, blank=True)
-    password = models.CharField(max_length=20, blank=False)
+
 
 
 
