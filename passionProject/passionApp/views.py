@@ -14,6 +14,9 @@ def index(request):
     }
     return render(request, "passionApp/index.html", context)
 
+def aboutUs(request):
+    return render(request, "passionApp/aboutUs.html")
+
 
 # Front page where all the articles Athena and I Post that are informative regarding the whole Asian World
 

@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
 
+    path('aboutUs/', views.aboutUs, name='aboutUs'),
+
     # add member
     path('newMember/', views.newMember, name='newMember'),
     path('allMembers/', views.allMembers, name='allMembers'),
