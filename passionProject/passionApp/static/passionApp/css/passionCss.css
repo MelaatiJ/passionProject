@@ -98,3 +98,19 @@ form{
     text-align: center;
     width: 500px;
 }
+
+#aboutUs_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 5%;
+    font-family: 'Shadows Into Light', cursive;
+    grid-gap: 10px;
+    text-align: center;
+
+
+}
+
+.aboutUs_image{
+    width:500px;
+}
