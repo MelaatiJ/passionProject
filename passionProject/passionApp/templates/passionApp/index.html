@@ -9,21 +9,39 @@
 
 <div id="index_body">
 {% for eachNani in allNani %}
+    <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ eachNani.image.url }}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ eachNani.topic }}</h5>
+                    <p class="card-text">{{ eachNani.entry }}</p>
+                    <p class="card-text"><small class="text-muted">{{ eachNani.date }}</small></p>
+                    <a href="{{ eachNani.link }}">{{ eachNani.link }}</a>
+                    <a href="{% url 'editNani' eachNani.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'deleteNani' eachNani.id %}" class="btn btn-primary">Delete</a>
 
-    <section>
-        {{ eachNani.topic }}
-        <br>
-        {{ eachNani.date }}
-        <br>
-        <img class="index_image" src="{{ eachNani.image.url }}">
-        <br>
-        {{ eachNani.entry }}
-        <br>
-        <a href="{{ eachNani.link }}">{{ eachNani.link }}</a>
-        <br>
-        <a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>
-        <a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>
-    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    <section>-->
+<!--        {{ eachNani.topic }}-->
+<!--        <br>-->
+<!--        {{ eachNani.date }}-->
+<!--        <br>-->
+<!--        <img class="index_image" src="{{ eachNani.image.url }}">-->
+<!--        <br>-->
+<!--        {{ eachNani.entry }}-->
+<!--        <br>-->
+<!--        <a href="{{ eachNani.link }}">{{ eachNani.link }}</a>-->
+<!--        <br>-->
+<!--        <a href="{% url 'editNani' eachNani.id %}"><button>Edit Post</button></a>-->
+<!--        <a href="{% url 'deleteNani' eachNani.id %}"><button>Delete Post</button></a>-->
+<!--    </section>-->
 {% endfor %}
 
 </div>

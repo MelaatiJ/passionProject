@@ -81,8 +81,9 @@ form{
 
 #index_body{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     text-align: center;
+    padding: 5%;
 
 }
 

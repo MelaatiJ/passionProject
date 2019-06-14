@@ -7,17 +7,24 @@
 </div>
 <hr/>
 
-<div id="library_grid">
+<div class="container">
 
 {% for eachBook in allBooks %}
-    <section >
-        <h1 class="library_title"><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.title }}</a></h1>
-        <img class="library_image" src="{{ eachBook.cover.url }}">
-        <br>
-        <a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>
-        <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>
-        <br>
-    </section>
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{ eachBook.cover.url }}" class="card-img-bottom" alt="...">
+            <div class="card-body">
+                <h3 class="card-title"><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.title }}</a></h3>
+                <a href="{% url 'editBook' eachBook.id %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'deleteBook' eachBook.id %}" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+<!--        <h1 class="card-title"><a href="{{ eachBook.link }}" target="_blank">{{ eachBook.title }}</a></h1>-->
+<!--        <img class="library_image" src="{{ eachBook.cover.url }}">-->
+<!--        <br>-->
+<!--        <a href="{% url 'editBook' eachBook.id %}"><button>Edit Book</button></a>-->
+<!--        <a href="{% url 'deleteBook' eachBook.id %}"><button>Delete Book</button></a>-->
+<!--        <br>-->
 
     {% endfor %}
 </div>
